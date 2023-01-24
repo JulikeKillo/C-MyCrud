@@ -1,0 +1,66 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSMySQL_SMART_CRUD_V1"
+        xmlns:MySqlClient="clr-namespace:MySql.Data.MySqlClient;assembly=MySql.Data" x:Class="CSMySQL_SMART_CRUD_V1.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="698" Width="1275">
+    <Grid HorizontalAlignment="Left" Width="1265" Height="623" VerticalAlignment="Bottom">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="461*"/>
+            <RowDefinition Height="173*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="215*"/>
+            <ColumnDefinition Width="162*"/>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="104*"/>
+            <ColumnDefinition Width="544"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="0,-48,0,426" Grid.ColumnSpan="5" Background="#354344" Grid.RowSpan="2">
+            <Label Foreground="White"  Content="C#: MySQL/MariaDB: SMART CRUD" Width="1264" FontSize="40" Height="74" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="3.552"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="1.738"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+        </StackPanel>
+        <TextBox x:Name="txtBuscar" Grid.Column="4" HorizontalAlignment="Left" Margin="0,-25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194" Height="29" TextChanged="buscaDato" FontSize="15" Grid.RowSpan="2"/>
+        <Button x:Name="btBuscar" Grid.Column="4" Content="BUSCAR" HorizontalAlignment="Left" Margin="364,-27,0,0" VerticalAlignment="Top" Height="33" Width="108"  FontSize="15" Grid.RowSpan="2"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="123,121,0,0" VerticalAlignment="Top" FontSize="24" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Label Content="Apellidos:" HorizontalAlignment="Left" Margin="124,0,0,0" VerticalAlignment="Center" FontSize="24" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Label Content="Género:" Margin="124,298,151,0" VerticalAlignment="Top" RenderTransformOrigin="0.466,2.276" FontSize="24" Grid.RowSpan="2" Height="42" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txfNombre" FontSize="30" HorizontalAlignment="Left" Margin="33,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="42"  Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txfApellidos" FontSize="30" HorizontalAlignment="Left" Margin="34,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="255" RenderTransformOrigin="0.484,0.523" Height="42" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <ComboBox x:Name="cbGenero" FontSize="30" HorizontalAlignment="Left" Margin="34,294,0,0" VerticalAlignment="Top" Width="255" Height="46" IsEnabled="True" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2">
+            <ComboBoxItem Content="Hombre"/>
+            <ComboBoxItem Content="Mujer"/>
+        </ComboBox>
+        <Button x:Name="btInserta" Content="INSERT()" HorizontalAlignment="Left" Margin="114,77,0,0" VerticalAlignment="Top" Height="42" Width="150" Click="Button_Click1" FontSize="25" Grid.RowSpan="2" Grid.Column="4"/>
+        <Button x:Name="btActualiza" Grid.Column="4" Content="UPDATE ()" HorizontalAlignment="Left" Margin="115,175,0,0" VerticalAlignment="Top" Height="42" Width="149" Click="Button_Click2" FontSize="25" Grid.RowSpan="2"/>
+        <Button x:Name="btEliminar" Grid.Column="4" Content="DELETE ()" HorizontalAlignment="Left" Margin="118,276,0,0" VerticalAlignment="Top" Height="47" Width="146" Click="Button_Click3" FontSize="25" Grid.RowSpan="2" RenderTransformOrigin="1.526,0.587"/>
+        <DataGrid x:Name="DataGrid" Grid.RowSpan="3" d:ItemsSource="{d:SampleData ItemCount=5}" MouseDoubleClick="datosClick" IsReadOnly="True" Margin="149,396,91,10" Grid.ColumnSpan="5">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding id}"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"/>
+                <DataGridTextColumn Header="Apellidos" Binding="{Binding apellidos}"/>
+                <DataGridTextColumn Header="Género" Binding="{Binding genero}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="idTXT"  HorizontalAlignment="Left" Margin="181,50,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="25" Width="101" Height="35" Grid.ColumnSpan="2" />
+        <Label Content="ID:" HorizontalAlignment="Left" Margin="123,43,0,0" VerticalAlignment="Top" FontSize="24" Grid.RowSpan="2" RenderTransformOrigin="-0.111,-0.253"/>
+
+
+    </Grid>
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\Julike\Desktop\CSMySQL_SMART_CRUD_V1\992114_751c_3.jpg"/>
+    </Window.Background>
+
+</Window>
